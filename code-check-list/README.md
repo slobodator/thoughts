@@ -1,9 +1,9 @@
 # Code Check List
 
-**Disclaimer**. Not only you're interviewing me, I'm also curious how mature the project is, what the developers
-preferences are and so on.
+Even we are on Java and Spring Boot, various developers have different thoughts and preferences about approaches and
+patterns.
 
-I realize that the code is enclosed by NDA, hence prepared some questions that concern me and even possible answers of
+The code is usually enclosed by NDA, hence I prepared some questions that concern me and even possible answer of
 them.
 
 I'm asking absolutely seriously though they are written in a provocative manner. Have fun!
@@ -11,54 +11,65 @@ I'm asking absolutely seriously though they are written in a provocative manner.
 ## General
 
 - Is Lombok used?
-    - definitely yes!
-    - there is no need to use it
-    - we use Java Records instead
-    - we are on Kotlin
-
-- Are `Request`, `DomainModel` and `Response` three different classes for every business entity?
-    - no, it is too verbose, one class fits all 
-    - yes, sure
-
-- What Bean Mapper is used?
-    - what is this and what is it needed for?
-    - MapStruct
-    - ModelMapper
-    - Dozer
-    - we prefer to have the control over the process and write the transformation code manually
+  - definitely yes! `@Data` and `@Builder` are our best friends!
+  - there is no need to use it, IDE generates all stuff
+  - we use Java Records instead
+  - we are on Kotlin
 
 - POJO
   - we're fine with that
   - we don't use setters
-  - we use neither setters nor getters
+  - we are against POJO, so use neither setters nor getters
+
+- Assume we're handling CRUD operations for `Users` with just `id`, `firstName` and `lastName`. Is it necessary to have
+  three separate classes: `UserRequest`, `UserEntity` and `UserResponse`?
+  - no, no need to create there identical classes, one class fits all
+  - yes, we do that for any reason
+
+- What Bean Mapper is used?
+  - what is this and what is it needed for?
+  - MapStruct
+  - ModelMapper
+  - Dozer
+  - we prefer to have the control over the process and write the transformation code manually
+
+## Testing
+
+- What mock framework is used?
+  - Mockito
+  - PowerMock
+  - WireMock
+  - mocking is a bad idea
 
 ## JPA/Hibernate
 
 - How do you manage entity's `equals()` and `hashCode()`?
-    - in no way. For what?
-    - in a regular way, based on all fields using `@EqualsAndHashCode`
-    - based on the `id`
-    - we have a `BaseEntity` for that
-    - we've also read Vlad's article regarding that
+  - in no way. For what?
+  - in a regular way, based on all fields using `@EqualsAndHashCode`
+  - based on its `id`
+  - we have a `BaseEntity` for that
+  - we also read Vlad's article regarding that
 
 - Is `@Embeddable` used?
-    - no, haven't heard about it
-    - yes, sometimes
-    - it is mandatory to wrap everything with it
+  - no, haven't heard about it
+  - yes, sometimes
+  - it is a kind of mandatory to wrap everything with it
 
 - What value is set for the `spring.jpa.open-in-view` property?
-    - what the hell is that? it is not set explicitly, so the default value is used
-    - yes, I know what you're asking about
+  - true (default)
+  - false (why?)
+  - what the hell is that? what is the sense to discuss any random property?!
+  - well, get your concern
 
 - How are transactions managed?
-    - in no way. Let's say, they are managed automatically
-    - all controllers/facades are annotated with `@Transactional`
-    - all services are annotated with `@Transactional`
-    - there is a base class/AOP pointcut for that
-    - well, it is a challenge...
+  - in no way. Let's say they are managed automatically
+  - all controllers/facades are annotated with `@Transactional`
+  - all services are annotated with `@Transactional`
+  - there is a base class/AOP pointcut for that
+  - well, it is a challenge...
 
-- What about SQL queries compile check?
-  - do you mean _runtime_ check?
-  - hibernate metamodel generator
+- What about a SQL queries compile check?
+  - do you mean the _runtime_ check?
+  - Hibernate Metamodel Generator
   - QueryDSL
   - JOOQ
