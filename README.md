@@ -8,3 +8,4 @@ Index
 
 - [Code check list](code-check-list)
 - [Yoda Style](yoda-style)
+- [Lombok Builder](lombok-builder)
