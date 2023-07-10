@@ -7,3 +7,4 @@ Here is a kind of my thoughts regarding Java, programming and related topics.
 Index
 
 - [Code check list](code-check-list)
+- [Yoda Style](yoda-style)
