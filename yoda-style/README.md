@@ -7,7 +7,7 @@ and other funny things.
 
 That times the `C` code was much closer to the computer rather than programmers. So it made sense to write `if (1 == x)`
 because `if (x == 1)` and `if (x = 1)` were both valid statements from the compiler perspective but probably the last
-one shouldn’t be invoked always (but it was).
+one shouldn't be invoked always (but it was).
 
 But there is 202x at the calendar, we use Java and IDEA with various analysers.
 

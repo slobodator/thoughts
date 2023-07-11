@@ -54,7 +54,7 @@ and `LocalDate`. Invoking their methods return **a new instance** of the class.
 
 Btw, the core java developers also did mistakes. `java.util.Date` has a terrible design. Look at
 
-```java
+```
 Date date = new Date(2022, 1, 1); // ha-ha, it is not January, 1st
 date.setMonth(...); // WTF actually _setting_ another month means?!
 ```
@@ -69,7 +69,7 @@ LocalDate allows use to add or subtract some period, but it will be another Loca
 
 **A**: At the consistency. Consider
 
-```java
+```
 if (obj.getSomeProperty() > 5) {
     obj.setFoo("xyz");
     obj.setBar(10);
@@ -81,14 +81,14 @@ if (obj.getSomeProperty() > 5) {
 
 where `obj` is "touched" multiple times and
 
-```java
+```
 obj.someSelfExplainebleMethodName(5);
 ```
 
 that does the very same actions but inside the class.
 
-```java
-void someSelfExplainebleMethodName(Integer value) {
+```
+void someSelfExplainableMethodName(Integer value) {
     if (this.someProperty > value) {
         this.foo = "xyz";
         this.bar = 10;

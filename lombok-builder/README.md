@@ -18,13 +18,13 @@ for a rental agency. If a customer just wants to drive and doesn't have any spec
 should provide them some car that is ready to go i.e. `car.drive()` does its job and doesn't throw any exception.
 Another customer may call
 
-```java
+```
 carBuilder
-        .ofType(CarType.ECONOMY)
-        .withTransmission(Transmission.AUTO)
-        .withFeature(Feature.CHILD_SEAT)
-        .withFeature(Feature.GPS_NAVIGATOR)
-        .build();
+    .ofType(CarType.ECONOMY)
+    .withTransmission(Transmission.AUTO)
+    .withFeature(Feature.CHILD_SEAT)
+    .withFeature(Feature.GPS_NAVIGATOR)
+    .build();
 ```
 
 and that should also be fine.
@@ -96,10 +96,10 @@ IDEA also gives you a hint. Be tidy and still use the constructor.
 
 **Q**: … but I don’t want to inject the dependency for a single mapping. Could I use the builder for that, i.e.
 
-```java
+```
 Dto.builder()
-        .withField(...)
-        .build()
+    .withField(...)
+    .build()
 ```
 
 ?
@@ -115,7 +115,7 @@ the request Dto. For domains objects the setters should be forbidden as they bre
 
 Instead of
 
-```java
+```
 MyRequest request = new MyRequest();
 request.setAnId("user");
 request.setResellerId(1);
@@ -123,10 +123,10 @@ request.setResellerId(1);
 
 you may write it in a bit more elegant way
 
-```java
+```
 MyRequest request = new MyRequest()
-        .setAnId("user")
-        .setResellerId(1);
+    .setAnId("user")
+    .setResellerId(1);
 ```
 
 This is called a setter chain and turned on by `lombok.accessors.chain = true` at the `lombok.config`. There is no harm
