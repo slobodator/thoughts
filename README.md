@@ -6,6 +6,7 @@ Here is a kind of my thoughts regarding Java, programming and related topics.
 
 Index
 
-- [Code check list](code-check-list)
+- [Code Checklist](code-check-list)
 - [Yoda Style](yoda-style)
 - [Lombok Builder](lombok-builder)
+- [Constructors and Setters](constructors-and-setters)
