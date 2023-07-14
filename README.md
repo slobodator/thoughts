@@ -10,3 +10,4 @@ Index
 - [Yoda Style](yoda-style)
 - [Lombok Builder](lombok-builder)
 - [Constructors and Setters](constructors-and-setters)
+- [JPA Entity Blueprint](jpa-entity-blueprint)
