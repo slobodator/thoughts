@@ -11,3 +11,4 @@ Index
 - [Lombok Builder](lombok-builder)
 - [Constructors and Setters](constructors-and-setters)
 - [JPA Entity Blueprint](jpa-entity-blueprint)
+- [Spring Data `save()` Method](spring-data-save-method)
